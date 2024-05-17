@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count number</title>
+</head>
+<body>
+        <div class="box">
+           <h1 id="show">0</h1>
+            <button onclick="btn1()">increament</button>
+            <button onclick="btn2()">Decreament</button>
+            <button onclick="btn3()">Reset</button>
+        </div>
+        <script>
+            let show = document.getElementById("show")
+            let count = 0
+            function btn1(){
+                count++
+                show.innerHTML= count
+            }
+            function btn2(){
+                count--
+                show.innerHTML= count
+            }
+            function btn3(){
+                count=0
+                show.innerHTML= count
+            }
+        </script>
+</body>
+</html>

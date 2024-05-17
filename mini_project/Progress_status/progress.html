@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        .contain{
+            text-align: center;
+        }
+        .progress-container{
+            border:1px solid black;
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom:20px;
+            font-size:25px;
+            max-width: 100%;
+            width:350px;
+            position: relative;
+        }
+        .progress-container::before{
+            content: " ";
+            background-color: var(--line-border-empty);
+            border: 1px solid black;
+            position: absolute;
+            top:50%;
+            left:0;
+            transform: translateY(-50%);
+            height:4px;
+            width:100%;
+            z-index: -1;
+        }
+        .status{
+            background: var(--line-border-fill);
+            position: absolute;
+            top: 50%;
+            left:0;
+            transform: translateY(-50%);
+            height:4px;
+            width:0%;
+            z-index: -1;
+            transition: 0.4 ease;;
+        }
+        .circle{
+            border-radius:50%;
+            background: #fff;
+            color:#999;
+            height:30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:3px solid  var(--line-border-empty);
+            transition: 0.4 ease;
+        }
+     
+        .btn{
+            padding: 20px;
+            font-size:20px;
+            border-radius:10px;
+            border:none;
+            background: blue;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+         <div class="wrapper">
+            <div class="contain">
+                <div class="progress-container">
+                    <div class="status" id="progress"></div>
+                    <div class="circle " id="active">1</div>
+                    <div class="circle">2</div>
+                    <div class="circle">3</div>
+                    <div class="circle">4</div>
+                </div>
+                <button class="btn" id="prev">Prev</button>
+                <button class="btn" id="next">Next</button>
+            </div>
+         </div>
+</body>
+</html>

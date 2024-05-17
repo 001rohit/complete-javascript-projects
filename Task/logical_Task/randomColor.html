@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height:30vh;
+        }
+        #user,#system{
+             width:200px;
+             height:200px;
+             border:1px solid black;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             font-size:2rem
+        }
+        .result{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .attempt1,.score{
+            width:350px;
+           text-align: center;
+           font-size:2rem;
+           text-transform: capitalize;
+           color: brown;
+           /* margin-right:20px; */
+        }
+        #attempt{
+            padding: 10px;
+            font-size:20px;
+            border: none;
+
+        }
+        .score{
+            text-align: center;
+        }
+        
+        #btn{
+           padding: 10px;
+           font-size: 20px;
+           color:red;
+           background: white;
+           cursor: pointer;
+           border:none;
+           border-radius:15px;
+           transition: all 0.5s ;
+        }
+        #btn:active{
+            transform:scale(0.8)
+        }
+        #attempt{
+            font-size: 3rem;;
+        }
+        #user,#system{
+            background: white;
+                border:5px solid red;
+                border-radius:15px;
+        }
+        @media screen and (max-width:600px) {
+            
+            .wrapper{
+                /* display: block; */
+                text-align: center;
+                align-items: center;
+            }
+            
+            #user,#system{
+                margin: 10px;
+                width:180px;
+                height:180px;
+                background: white;
+                border:1px solid white;
+            }
+            #btn{
+                width:95px;
+            }
+
+        }
+        .header{
+            text-align: center;
+            text-transform: uppercase;
+            background: brown;
+            color:white;
+            padding: 20px;
+            margin:10px 0;
+        }
+        .box1{
+            display: flex;
+            flex-wrap: wrap;
+            /* margin-top:50px; */
+        }
+        @keyframes syst {
+            0%{
+                background-color: aqua;
+            }
+            25%{
+                background: lime;
+            }
+            50%{
+                background: red;
+            }
+            75%{
+                background: cyan;
+            }
+            100%{
+                background: brown;
+            }
+            
+        }
+         
+        .item{
+            width:20px;
+            margin:5px;
+            height:20px;
+            border-radius:50%;
+            background: #000;
+            animation:syst 2.5s infinite;
+
+        }
+        body{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Color matching game</h1>
+    </div>
+    <div class="box1"></div>
+              <div class="wrapper">
+              <div id="user">User</div>
+                <button id="btn" onclick="checkColor()">compare color</button>
+              <div id="system">System</div>
+            </div>
+            <div class="result">
+                <!-- <div class="score">Score :<span id="score1"></span></div> -->
+                <div class="attempt1">you just <span  id="attempt"></span> tried </div>
+            </div>
+              <script>
+                     let user = document.getElementById("user")
+                     let system = document.getElementById("system")
+                     let attemp = document.getElementById("attempt")
+                     let userColor;
+                     var randomColor;
+                     let count=0;
+                     let colorList = ["red","green","blue","orange","brown","lime"]
+                     let box1 = document.querySelector(".box1")
+                    
+                     for(let i = 0 ;i<80;i++){
+                        var div = document.createElement("div")
+                        div.className = "item"
+                        box1.appendChild(div)
+                     }
+                     user.onclick= function(){
+                        userColor = prompt("Enter you color: ")
+                       user.style.background = userColor
+                       user.style.color = "white"
+                        user.innerHTML = userColor
+                    //    checkColor()
+                     }
+                     function checkColor(){
+                        randomColor = colorList[Math.floor(Math.random()*colorList.length)]
+                        system.style.background = randomColor
+                        system.innerHTML = randomColor
+                        system.style.color = "white"
+                        console.log(randomColor)
+                        count++;
+                       console.log(user)
+                    
+                       setTimeout(() => {
+                        if(count>5){
+                            // count++
+                            count=0
+                        }
+                    else {
+                            if(userColor===randomColor){
+                                alert("your color is matched")
+                                alert("you want to play again")
+                                count =0
+                            }
+
+
+                            else if(count==5){
+                                count =0
+                                alert("you lose this game")
+                            }
+                        }
+                        
+                    }, 950);
+                    attemp.innerHTML = count
+                                        
+                        console.log(count)
+
+                     }
+
+                     
+
+                     
+              </script>
+</body>
+</html>

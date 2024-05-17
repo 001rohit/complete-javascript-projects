@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height:100vh;
+
+        }
+        .box{
+            text-align: center;
+            width:400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom:20px;
+            
+        }
+        #image{
+            transition: all 1s;
+            cursor: pointer;
+        }
+        img{
+            width:400px;
+        }
+    </style>
+</head>
+<body>
+        <div class="box">
+            <img src="https://img.freepik.com/free-photo/vibrant-colors-nature-close-up-wet-purple-daisy-generated-by-artificial-intellingence_25030-63819.jpg" alt="" id="image">
+        </div>
+        <script>
+           let image = document.getElementById("image");
+           let count=0;
+           document.body.onclick = function(){
+           if(count%2==0){
+            count++
+               image.style.transform = "scale(2.5)"
+               document.body.style.background = "blue"
+               document.body.style.filter = "blur(0)"
+
+            }
+            else{
+                count++
+                document.body.style.filter = "blur(50px)"
+            image.style.transform = "scale(1)"
+           }
+           }
+        </script>
+</body>
+</html>

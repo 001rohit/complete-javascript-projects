@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height:100vh;
+        }
+        div,button{
+            color:red;
+            font-size: 15px;
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin:20px;
+            background: lime;
+        }
+    </style>
+</head>
+<body>
+          <div id="root">Dom</div>
+          <button onclick="show()">show to click me!</button>
+          <button onclick="hide()">hide to click me!</button>
+          <script>
+            let root = document.getElementById("root")
+            let div
+             function show(){
+                for(let i=0;i<=10;i++){
+                     div = document.createElement("div")
+                    div.className = "first_dom";
+                    div.innerHTML = "hellow my name is rohit "
+                    root.appendChild(div)
+                }
+                document.querySelector("#root").style.display = "block"
+
+            }
+            function hide(){
+                document.querySelector("#root").style.display = "none"
+            }
+          </script>
+</body>
+</html>

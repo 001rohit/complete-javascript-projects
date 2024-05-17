@@ -1,0 +1,54 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            height:100vw;
+            background: #000;
+        }
+        button{
+            padding: 10px;
+            font-size:25px;
+            background: hsl(0, 44%, 47%);
+            width:150px;
+            height:70px;
+            border-radius: 10px;
+            font-weight:bold;
+            color:white;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+      <button>Start</button>
+      <script>
+        let btn = document.querySelector("button")
+        let count=0;
+        btn.addEventListener("click",()=>{
+            count++
+            if(btn.innerText=="Start"){
+                btn.innerHTML = "Stop"
+                btn.style.background = "lime"
+                btn.style.transform ="scale(0.9)"
+                btn.style.boxShadow = "2px 5px 5px gray"
+                document.body.style.background = "brown"
+                
+            }
+            else if(btn.innerText=="Stop"){
+                btn.innerHTML = "Start"
+                btn.style.transform ="scale(1)"
+                btn.style.background = "brown"
+                btn.style.boxShadow = "none"
+                document.body.style.background = "lime"
+            }
+        })
+      </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #btn{
+           font-size:20px;
+            padding: 10px;
+            font-weight:bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+      <div class="wrapper">
+        <button id="btn">button</button>
+    </div>
+    <script>
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click",myfunction)
+        function myfunction(){
+            document.body.style.background = randomBg();
+        }
+        function randomBg(){
+            return `hsl(${Math.floor(Math.random()*360)},100%,50%)`
+        }
+    </script>
+</body>
+</html>

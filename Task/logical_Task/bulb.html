@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       text-align: center;
+       height:85vh;
+    background: #000;
+
+    }
+    .btn{
+        margin:50px 0;
+    }
+    button{
+        text-transform:uppercase;
+        padding: 20px;
+        font-size:20px;
+        cursor: pointer;
+    }
+    img{
+        /* box-shadow: none; */
+        filter: brightness(10%);
+        border-radius:50%;
+        cursor: pointer;
+    }
+    h1{
+        text-transform: uppercase;
+        color:white;
+        /* box-shadow: 2px 5px 45px gray; */
+        padding: 15px;
+        letter-spacing: 5px;
+    }
+
+  </style>
+</head>
+<body >
+         <div class="box" >
+             <img src="bulbimg/off_bulb.png" id="bulb_img" onmousemove="changeImage()"  width="320px" height="320px" alt="">
+                <h1 id="status1" > <span id="status">bulb off</span></h1>
+             </div>
+         </div> 
+         <script>
+             let img= document.querySelectorAll("img")
+             var count =0
+             let value = document.getElementById("value")
+             function changeImage(){
+                 var status = document.getElementById("status")
+                 var status1 = document.getElementById("status1")
+                var image = document.getElementById("bulb_img")
+                count++
+                if(count%2==0){
+                    image.src = "bulbimg/on1.jpeg"
+                    image.style.boxShadow = " 2px 5px 45px gray"
+                    image.style.filter ="brightness(120%)"
+                    status.innerHTML = "bulb On"
+                    status1.style.boxShadow =" 2px 5px 45px gray"
+                    status1.style.background ="white"
+                    status1.style.color ="black"
+                }    
+                else{
+                    image.src = "bulbimg/off_bulb.png"
+                    image.style.boxShadow ="none"
+                    image.style.filter = "brightness(10%)"
+                    status.innerHTML = "bulb Off"
+                    status1.style.boxShadow =" none"
+                    status1.style.background ="black"
+                    status1.style.color ="white"
+
+
+                }
+                console.log("hellow")
+                console.log(count)
+             }
+            
+            
+         </script>
+</body>
+</html>

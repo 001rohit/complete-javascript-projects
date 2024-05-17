@@ -1,0 +1,5 @@
+games list
+1) random color (match color games)
+2)random number (match to number)
+3)Memory games(card matching games)
+4)calculator

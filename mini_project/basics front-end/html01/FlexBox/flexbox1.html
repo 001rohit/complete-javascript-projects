@@ -1,0 +1,80 @@
+<!-- Flex Box Property -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box Property</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      h1 {
+        color: red;
+        text-align: center;
+      }
+
+      .main_container {
+        border: 3px solid green;
+        width: 100%;
+        height: 80vh;
+        display: flex;
+
+        /* For Horizontal Alignment */
+        justify-content: center;
+
+        /* For Vertical Alignment */
+        align-items: center;
+
+        /* Flex Direction */
+        /* flex-direction: row-reverse; */
+
+        /* Flex - wrap */
+        flex-wrap: wrap;
+
+        /* Flex-flow: flex-direction flex-wrap */
+        /* flex-flow: row-reverse wrap; */
+
+        /* align-content: space-around; */
+      }
+
+      .box {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 10px;
+        color: rgb(40, 3, 223);
+        font-size: 30px;
+      }
+      .box1 {
+        background-color: yellow;
+        /* align-self: flex-end; */
+      }
+      .box2 {
+        background-color: cyan;
+        order: -1;
+      }
+      .box3 {
+        background-color: magenta;
+      }
+      .box4 {
+        background-color: lime;
+        order: -2;
+      }
+      .box5 {
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Box Property of CSS</h1>
+    <div class="main_container">
+      <div class="box box1">Box - 1</div>
+      <div class="box box2">Box- 2</div>
+      <div class="box box3">Box - 3</div>
+      <div class="box box4">Box - 4</div>
+      <div class="box box5">Box -5</div>
+    </div>
+  </body>
+</html>

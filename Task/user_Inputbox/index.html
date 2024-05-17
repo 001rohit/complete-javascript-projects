@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:95vh;
+        }
+        .inputbox{
+            width:400px;
+            height:450px;
+            text-align: center;
+            /* border: 1px solid black; */
+            bottom:10px;
+        }
+        .task-box{
+            padding:20px ;
+            width:300px;
+            /* height:30px; */
+            border: 1px solid black;
+        }
+        input{
+            width:250px;
+            height: 35px;
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+        button{
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 10px;;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="inputbox">
+        <div class="task-box">
+            <input type="text" id="input">
+            <button onclick="btn()">add Task</button>
+            <div id="itemCount"></div>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script>
+        var list = []
+        function btn(val){
+            var noItem = list.length
+            list[noItem] = document.getElementById("input").value
+                displayTask()
+              }
+              function displayTask(){
+                var n = list.length
+            document.getElementById("itemCount").innerHTML = `No. of item added: ${n.toString()}`
+                var result = document.getElementById("result")
+                while(result.hasChildNodes()){
+                    result.removeChild(result.lastChild)
+                }
+                for(let i = 0 ; i<n;i++){
+                    var itemDiv = document.createElement('div')
+                    itemDiv.innerHTML = `${list[i]}`
+                    result.append(itemDiv)
+                }
+                
+              }
+
+
+    </script>
+</body>
+</html>

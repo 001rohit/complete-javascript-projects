@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:65vh;
+        flex-direction: column;
+    }
+    .option{
+        height:300px;
+        width:400px;
+        text-align: center;
+    }
+     input{
+        margin:15px;
+     }
+     label{
+        font-size: 25px;
+        text-transform: uppercase;
+     }
+     .subscribe,.pay1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:20px;
+        width:300px;
+        /* height:200px; */
+     }
+     button{
+        padding: 20px;
+        font-size:20px;
+        text-transform: uppercase;
+     }
+     .showResult{
+        margin:20px;
+     }
+     #subscrip,#paySelect{
+        font-size:25px;
+        margin:10px;
+     }
+     ul{
+        list-style: none;
+     }
+   </style>
+</head>
+<body>
+           <div class="option">
+
+            <div class="subscribe">
+          <input type="radio" id="sub">
+        <label for="sub">subscription</label>
+    </div>
+         <div class="pay1">
+        <input type="radio" id="Gpay" name="fav">
+        <label for="Gpay">Gpay</label>
+    </div>
+        <div class="pay1">
+        <input type="radio" id="visa" name="fav">
+        <label for="visa">Visa</label>
+    </div>
+    <div class="pay1">
+        <input type="radio" id="Net" name="fav">
+        <label for="Net">Net banking</label>
+    </div>
+            <button onclick="submit()">Submit</button>
+            <div class="showResult">
+                <ul>
+                    <li>
+                        <div id="subscrip"></div>
+                    </li>
+                    <li>
+                        <div id="paySelect"></div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+        <script>
+               let sub = document.getElementById("sub")
+               let Gpay = document.getElementById("Gpay")
+               let visa = document.getElementById("visa")
+               let net = document.getElementById("Net")
+               let subscript = document.getElementById("subscrip")
+               let paySelect = document.getElementById("paySelect")
+               function submit(){
+                if(sub.checked){
+                    subscript.innerHTML="Subscription option selected"
+                }
+                else{
+                    subscript.innerHTML="Subscription option not selected"
+                }
+                if(Gpay.checked){
+                    paySelect.innerHTML = "You selecte Gpay option"
+                }
+                else if(visa.checked){
+                    paySelect.innerHTML = "you selecte Visa option"
+                }
+                else if(net.checked){
+                    paySelect.innerHTML = "you selecte Net Banking option"
+                }
+                else{
+                    paySelect.innerHTML = "you have no nay payment selected option "
+                }
+               }
+        </script>
+</body>
+</html>

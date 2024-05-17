@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .user,
+        .system,
+        .check {
+            margin: 20px 0;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .btn1 button {
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            background: #000;
+            cursor: pointer;
+            transition: background 0.5s;
+        }
+
+        .btn1 button:hover {
+            background: brown;
+        }
+
+        #userSide,
+        #systemSide {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            /* background: #000; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="user">
+        User side:
+        <div id="userSide"></div>
+    </div>
+    <div class="system">
+        System side:
+        <div id="systemSide"></div>
+    </div>
+    <div class="check">
+        <h2> you have life is: <span id="attempt">5</span></h2>
+    </div>
+    <div class="btn1">
+        <button id="btn">Check Status</button>
+    </div>
+    <div id="scorbox"></div>
+    <script>
+        let userSide = document.getElementById("userSide")
+        let systemSide = document.getElementById("systemSide")
+        let attempt = document.getElementById("attempt")
+        var value = 5
+        let button = document.getElementById("btn")
+        let scorebox = document.getElementById("scorbox")
+        var system = ["green", "red", "cyan", "blue", "orange", "yellow"]
+        var user;
+        var random_letter = "";
+        
+        // userSide.addEventListener('click',()=>{
+        // user=prompt("Enter any one alphabatic character: ")
+        // })
+      var score = 0
+        button.addEventListener('click', () => {
+            let random_letter1 = system[Math.floor(Math.random() * system.length)]
+            // random_letter = random_letter1
+            console.log(random_letter1)
+            user = prompt("Please Enter the color : ")
+
+            // let system1
+            userSide.style.background = user
+            systemSide.style.background = random_letter1
+            console.log(systemSide)
+
+            if (value > 0) {
+                value = value - 1
+                attempt.innerHTML = value
+
+                if (user === random_letter1 ){
+                    score+=5
+                    alert("your color is matched")
+                }
+                else  {
+                    alert("your color is not matched")
+                    
+                }
+            }
+       
+                
+      
+             else if(value==0){
+                    alert(`Game is over. your total score is ${score}`)
+                    value = 6
+                    if(score<0){
+                        alert("you are loss this game")
+                    }
+                    else if(score>=5 && score<10){
+                         alert(`good, you achive 🙂🙂 level third 🥉`)
+                      }
+                   else if(score>=10 && score<20){
+                       alert(`very good, you achive 🤗🤗 level second 🥈`)
+                    }
+                    else if(score>=20 ){
+                       alert(`excellent performance,  you achive 🥰🥰 level first 🥇`)
+                    }
+                }
+                scorebox.innerHTML = `you score: ${score}`
+                console.log("score is ",score)
+             score=0
+        })
+
+    </script>
+</body>
+
+</html>

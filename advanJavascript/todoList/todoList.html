@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            text-align: center;
+            background-color: #333;
+            color:white;
+            padding: 15px 0;
+        }
+  .Dashbord{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:55vh;
+    margin:20px 0;
+  }
+  .box{
+    padding:10px 25px;
+    border: 1px solid black;
+    text-align: center;
+    background: #c2bfbf;
+    font-size: 22px;
+  }
+  .nameField,.EmailField{
+    margin:15px
+  }
+  input{
+    padding: 5px;
+    font-size:20px;;
+  }
+  .heading{
+    background: #000;
+    color:white;
+    border-radius: 20px;
+  }
+  .sub #submit{
+    width:390px;
+    background: #000;
+    color:white;
+    font-weight: bold;
+    border:none;
+    border-radius:10px;
+    padding: 5px;
+    font-size:22px;
+    margin:10px;
+    cursor:pointer;
+    /* margin-left:55px; */
+  }
+#users{
+    list-style: none;
+}
+li{
+    margin:5px;
+    padding: 5px;
+    border:none;
+    background: white;
+}
+.Error{
+    margin: 20px;;
+    background: red;
+    color: white;
+    padding: 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <h1>my Todo List</h1>
+        </div>
+
+        <div class="Dashbord">
+        <div class="box">
+            <div class="heading">
+                <h2>Add User</h2>
+            </div>
+            <div id="showError"></div>
+
+            <div class="form">
+                <div class="nameField">
+                    Name: <input type="text" id="name">
+                </div>
+
+                <div class="EmailField">
+                    Email: <input type="text" id="email">
+                </div>
+              
+                <div class="sub">
+                    <input type="submit" type="submit" value="submit" id="submit">
+                </div>
+            </div>
+          
+            <ul id="users">
+               
+            </ul>
+        </div>
+
+        </div>
+    </div>
+    <script>
+        const submit = document.getElementById("submit")
+        const name = document.getElementById("name")
+        const email = document.getElementById("email")
+        const usersList = document.querySelector("#users")
+        const showError = document.querySelector("#showError")
+
+        submit.addEventListener("click",onSubmit)
+        function onSubmit(e){
+            e.preventDefault();
+
+            if(name.value =="" || email.value ==""){
+                showError.classList.add("Error")
+                showError.innerHTML = "Please Enter all fields"
+                setTimeout(() => showError.remove(), 1000);
+            }
+            else{
+              const li = document.createElement("li")
+              li.appendChild(document.createTextNode(`Name:${name.value} , Email: ${email.value}`));
+              usersList.append(li)
+              name.value = "";
+              email.value="";
+            }
+        }
+    </script>
+</body>
+</html>

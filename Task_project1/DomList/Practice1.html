@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <script>
+        let wrap = document.querySelector(".wrapper")
+        let list = document.createElement("ul")
+            list.id = "fruits"
+        let list1 = ["apple","orange","mango","banana"]
+        for(let i=0;i<list1.length;i++){
+            let item = document.createElement("li")
+            item.id=`${list1[i]}`
+            item.innerHTML =`${list1[i]}`
+            list.appendChild(item)
+        }
+        wrap.append(list)
+
+        let orderList = document.createElement("ol")
+        let list2 = ["rohit","yogesh","mukul","anand","anil"]
+        for(let val of list2){
+            let item2 = document.createElement("li")
+            item2.id = `${val}`
+            item2.innerHTML=`${val}`
+            orderList.append(item2)
+        } 
+        document.body.append(orderList)
+
+        
+    </script>
+</body>
+</html>

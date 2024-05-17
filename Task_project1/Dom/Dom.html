@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+               <ul id="fruit">
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Orange</li>
+               </ul>
+               <ul id="vagetable">
+                <li>Potato</li>
+                <li>tomato</li>
+                <li>Brinjal</li>
+               </ul>
+                
+          <script>
+            const listAdd = document.createElement("li")
+            listAdd.id = "new-item"
+            listAdd.innerHTML = "mango"
+            // document.getElementById("fruit").append(listAdd)
+            document.getElementById("fruit").prepend(listAdd)
+
+            //   const fruit = document.getElementById("fruit")
+            //     fruit.style.color = "red"
+            
+            //   const fruit = document.querySelector("#fruit")
+            //   fruit.style.color = "red"
+
+            //  const itemList = document.querySelectorAll("li")
+            //  itemList.forEach((item)=>{
+            //     item.style.color= "blue"
+            //     item.style.fontSize = "1.5rem"
+            //     item.style.background = "yellow"
+            //     item.style.textAlign = "center"
+            //  })
+
+            // for(let item of itemList){
+            //     item.style.color= "blue"
+            //     item.style.fontSize = "1.5rem"
+            //     item.style.background = "yellow"
+            //     item.style.textAlign = "center"
+            // }
+            const heading = document.createElement("h1")
+            heading.id = "myheading"
+            heading.textContent ="hellow welcome"
+            document.body.prepend(heading)
+            // document.body.append(heading)
+          </script>
+</body>
+</html>

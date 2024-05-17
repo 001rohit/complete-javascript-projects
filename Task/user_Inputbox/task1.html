@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+          <div id="input">click me</div>
+         <div id="show"></div>
+         <script>
+            let input = document.getElementById("input")
+            let count = 0
+            input.onmouseover = function(){
+                 count++
+                if(count>4){
+                    alert(`the count number is croose to 4 and present count number is ${count}`)
+                }else{
+
+                    alert(`mouse hover ${count}`)
+                }
+            }
+         </script>
+</body>
+</html>

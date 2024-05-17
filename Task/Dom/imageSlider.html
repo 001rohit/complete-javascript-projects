@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+        <style>
+            .contain{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height:80vh;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .frame{
+                width:450px;
+                height:450px;
+                overflow: hidden;
+            }
+            .imgbox{
+                width:450px;
+                height: 450px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                gap:20px;
+                transition: all 1s;
+            }
+            img{
+                width:450px;
+                height:400px;
+                object-fit: contain;
+            }
+            .btn{
+                display: flex;
+            }
+            button{
+                padding: 10px;
+                font-size:25px;
+                margin-left:15px;
+                border-radius: 15px;
+                cursor: pointer;
+            } 
+            #left{
+                transform: rotate(180deg);
+            }
+            @media screen and (max-width:600px) {
+                body{
+                    background: #000;
+                }
+               .btn{
+                          display: block;
+                          text-align: center;
+               }
+               button{
+                margin-bottom:10px;
+               }
+
+            }
+
+        </style>
+</head>
+<body>
+           <div class="contain">
+            <div class="frame">
+            <div class="imgbox" id="img">
+                <img src="https://t4.ftcdn.net/jpg/05/47/97/81/360_F_547978128_vqEEUYBr1vcAwfRAqReZXTYtyawpgLcC.jpg" class="image" alt="">
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Sr-aWUuP-3SdWFf8_rXm2haw7af6Tmk9tSiWmdCxPT9ISJQ73rAraLUGUaDiOZ7qqGk&usqp=CAU"  class="image" alt="">
+
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNo3RWkhtg5fFqstBHDaGFMQ5EhBZ3YNrZemPlfqTIiyhcp5mj_vX9AXgW8MRh2HsvPLU&usqp=CAU"  class="image" alt="">
+
+                 <img src="https://wallpapers.com/images/hd/hd-nature-sunset-in-forest-i2ti2r2r8qqciuit.jpg"  class="image" alt="">
+
+                 <img src="https://www.hdwallpapers.in/thumbs/2020/stream_waterfall_between_green_algae_covered_rock_in_forest_hd_nature-t1.jpg"  class="image" alt="">
+                </div>
+            </div>
+                <div class="btn">
+                    <button id = "btn1" onclick="prev()">
+                        <i class="fa-solid fa-arrow-right" id="left"></i>
+                    </button>
+                    <button onclick="next()">
+                        <i class="fa-solid fa-arrow-right" id="right"></i></button>
+                        <div class="first">
+                            <button onclick="getFirst()">first slider</button>
+                            <button onclick="getLast()">last slider</button>
+                        </div>
+                </div>
+            </div>
+            <script>
+                   let leftArrow = document.getElementById("left")
+                   let rightArrow = document.getElementById("right")
+                   let img = document.getElementById("img")
+                   let image = document.querySelectorAll(".image")
+                   let slider = 1
+                   leftArrow.addEventListener("click",left)
+                rightArrow.addEventListener("click",right)
+                //    let length = img.length
+
+                   function left(){
+                    img.style.transform = `translateX(-${(slider-2)*475}px)`;
+                    slider--;
+                }
+                function getFirst(){
+                    img.style.transform = `translateX(0px)`
+                          slider=1
+
+                }
+                function getLast(){
+                    img.style.transform = `translateX(-${(image.length-1)*475}px)`
+                          slider=image.length;
+
+                }
+                function right(){
+                        if(slider<image.length){
+                            img.style.transform = `translateX(-${slider*475}px)`
+                            slider++
+                        }
+                        else{
+                             getFirst() 
+                            } 
+                    // slider < image.length ? right() :getFirst()
+
+                }
+               
+
+            </script>
+</body>
+</html>

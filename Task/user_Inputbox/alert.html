@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      starting : <input type="text" id="str"><br><br>
+      ending : <input type="text" id="end"><br><br>
+        <input type="button" value="submit" onclick="AddTask()"/><br><br>
+        <script>
+            let sumEven = 0
+            let sumOdd = 0
+            let sumNatural=0
+            function AddTask(){
+                // let str = document.getElementById("str").value
+                let end = document.getElementById("end").value
+                console.log(end)
+              
+                for(let i  =1;i<=end;i++){
+                    console.log(i)
+                if(i%2==0){
+                    sumEven +=i
+                }
+                if(i%2!=0){
+                    sumOdd +=i
+                }
+            }
+            Even()
+            Odd()
+            }
+           
+            function Even(){
+                console.log("Even ",sumEven)
+                alert(`Sum of even number is ${sumEven}`)
+            }
+            function Odd(){
+                console.log("Odd ",sumOdd)
+
+                alert(`Sum of odd number is ${sumOdd}`)
+            }
+        </script>
+</body>
+</html>

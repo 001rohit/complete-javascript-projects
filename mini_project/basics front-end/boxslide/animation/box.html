@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background: brown;
+           animation-name: box;
+           position: relative;
+           animation-direction: forward;
+           animation-duration: 5s;
+           animation-timing-function: ease-in;
+           animation-iteration-count: infinite;
+        }
+        @keyframes box {
+            0%{
+                background-color: brown;
+                top: 0;
+                left: 0;
+            }
+            25%{
+                background-color: red;
+                top: 0;
+                left: 200px;
+            }
+            50%{
+                background-color: orange;
+                top: 200px;
+                left: 200px;
+            }
+            75%{
+                background-color: blue;
+                top: 200px;
+                left: 0;
+            }
+            100%{
+                background-color: lime;
+                top:0;
+                left: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:90vh;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .quiz{
+            width:400px;
+            border: 1px solid black;
+            /* padding: 0 20px; */
+            text-align: center;
+        }
+        .head{
+            color: brown;
+            margin:10px 0;
+        }
+        #question{
+            text-align: center;
+            font-size:20px;
+        }
+        ul{
+            width:350px;
+        }
+        ul li{
+            list-style:none;
+            display:flex;
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+            /* justify-content: center; */
+            border: 1px solid black;
+            margin-left: 25px;
+            padding: 15px;
+            margin-top:15px;
+            margin-bottom:15px;
+            cursor: pointer;
+        }
+        ul li:active{
+               box-shadow: 2px 5px 10px gray;
+         }
+          #submit,button{
+            width:405px;
+            padding: 15px;
+            background: hsl(300, 79%, 60%);
+            font-size: 20px;
+            text-transform: uppercase;
+            color: white;
+          }
+    </style>
+</head>
+<body>
+         <div class="box1">`
+            <div class="quiz" id="quiz1">
+                  <h1 class="head">welcome to my quize App</h1>
+                <div id="qustbox">
+                    <h1 id="question">question 1) Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque</h1>
+                    <ul>
+                        <li>
+                            <input type="radio" id="a" name="answare" class="answar">
+                            <label for="a" id="a_text">.answare...</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="b" name="answare" class="answar">
+                            <label for="b" id="b_text">.answare...</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="c" name="answare" class="answar">
+                            <label for="c" id="c_text">.answare...</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="d" name="answare" class="answar">
+                            <label for="d" id="d_text">.answare...</label>
+                        </li>
+                    </ul>
+                </div>
+                <button id="submit">submit</button>
+            </div>
+        </div>
+        <script>
+            const quizData = [
+    {
+      question: "Which language runs in a web browser?",
+      a: "Java",
+      b: "C",
+      c: "Python",
+      d: "JavaScript",
+      correct: "d",
+    },
+    {
+      question: "What does CSS stand for?",
+      a: "Central Style Sheets",
+      b: "Cascading Style Sheets",
+      c: "Cascading Simple Sheets",
+      d: "Cars SUVs Sailboats",
+      correct: "b",
+    },
+    {
+      question: "What does HTML stand for?",
+      a: "Hypertext Markup Language",
+      b: "Hypertext Markdown Language",
+      c: "Hyperloop Machine Language",
+      d: "Helicopters Terminals Motorboats Lamborginis",
+      correct: "a",
+    },
+    {
+      question: "What year was JavaScript launched?",
+      a: "1996",
+      b: "1995",
+      c: "1994",
+      d: "none of the above",
+      correct: "b",
+    },
+  ];
+
+let submit1 = document.getElementById("submit")
+let option1 = document.getElementById("a_text")
+let option2 = document.getElementById("b_text")
+let option3 = document.getElementById("c_text")
+let option4 = document.getElementById("d_text")
+let questionElement = document.getElementById("question")
+let answareElement = document.querySelectorAll(".answar")
+let quiz01 = document.getElementById("quiz1")
+let currentQuize = 0;
+let score=0;
+
+// #check wrong answare
+// #check right anware
+//fatch data 
+// #compare data to array object
+
+const wrongAns1=()=>{
+    answareElement.forEach((ans)=>(ans.checked)=false);
+}
+const rightAns1 = ()=>{
+    let rightAns;
+    answareElement.forEach((answareElement)=>{
+        if(answareElement.checked){
+            rightAns = answareElement.id;
+        }
+    });
+    return rightAns;
+}
+
+const loadQuiz1 = () =>{
+    wrongAns1();
+    const currectQuize1 = quizData[currentQuize];
+    questionElement.innerHTML = currectQuize1.question
+    option1.innerHTML = currectQuize1.a
+    option2.innerHTML = currectQuize1.b
+    option3.innerHTML = currectQuize1.c
+    option4.innerHTML = currectQuize1.d
+}
+loadQuiz1();
+
+submit1.addEventListener("click",()=>{
+    const answareElement = rightAns1();
+    if(answareElement){
+        if(answareElement===quizData[currentQuize].correct)score++;
+        currentQuize++;
+        if(currentQuize<quizData.length)
+        loadQuiz1();
+    else{
+        quiz01.innerHTML =  `<h1>your score is ${score} out of total question ${quizData.length} </h1>
+      <button onclick="history.go(0)">Again Restart</button>`  
+    }
+    }
+})
+console.log("hellow")
+        </script>
+</body>
+</html>

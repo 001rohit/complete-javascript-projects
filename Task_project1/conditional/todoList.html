@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* height: 30vh; */
+            flex-wrap: wrap;
+            background: #000;
+        }
+        .wrapper{
+            width:600px;
+            display: flex;
+            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height:20vh;
+            margin: 15px;;
+        }
+        input{
+            width:300px;
+            height:30px;
+        }
+        .btn2{
+            padding: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #root{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+      .name{
+        /* width:2px; */
+        border: 2px solid black;
+        font-size:2rem;
+        padding: 5px;
+        margin:5px;
+        background: brown;
+        /* text-align: center; */
+      }
+      #bt1{
+          font-size:20px;
+          width:100px;
+        }
+        h1,p{
+          color: white;
+
+      }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="text" id="val">
+         <button class="btn2" onclick="btn()">submit</button>
+         <div id="root"></div>
+        </div>
+       <script>
+           let root = document.getElementById("root")
+           let count=0;
+           function btn(){
+            var input1 = document.getElementById("val").value
+            count++
+            for(let i=1;i<2;i++){
+                var div = document.createElement("div")
+                div.className ="name"
+                div.innerHTML = ` <h1> todo list ${count} </h1>
+                <p>  Task : ${input1} </p>
+                       <button id ="bt1" onclick ="history.go(0)">Remove </button>`
+                root.appendChild(div)
+            }
+            console.log(div)
+            
+            } 
+       </script>
+</body>
+</html>

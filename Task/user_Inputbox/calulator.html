@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 95vh;
+        }
+        .wrapper{
+            /* width:300px; */
+            height:350px;
+            text-align: center;
+        }
+        input{
+            width:275px;
+            height:45px;
+            padding: 10px 5px;
+            text-align: center;
+            color: white;
+            background: #000;
+            text-align: left;
+            font-size:3rem;
+        }
+        
+        .row {
+            width:290px;
+            background: gray;
+            padding: 5px 0;
+        }
+        button{
+            padding: 10px 0;
+            width:65px;
+            height:50px;
+            margin: 2px;
+           border-radius: 25px;
+           font-size: 25px;
+           border: none;
+           cursor: pointer;
+           transition: all 0.2s;
+        }
+
+        button:active{
+            transform: scale(0.85);
+        }
+    </style>
+</head>
+<body>
+     <div class="wrapper">
+
+          <input type="text" id="input"  value=" " disabled>
+          <div class="box">
+            <div class="row">
+                <button onclick="Clear()">Ac</button>
+                <button onclick="delet( )">del</button>
+                <button onclick="input('%')">%</button>
+                  <button onclick="input('/')">/</button>
+              </div>
+              <div class="row">
+                  <button onclick="input('7')">7</button>
+                  <button onclick="input('8')">8</button>
+                  <button onclick="input('9')">9</button>
+                    <button onclick="input('*')">*</button>
+                </div>
+                <div class="row">
+                  <button onclick="input('4')">4</button>
+                  <button onclick="input('5')">5</button>
+                  <button onclick="input('6')">6</button>
+                    <button onclick="input('-')">-</button>
+                </div>
+                <div class="row">
+                    <button onclick="input('1')">1</button>
+                    <button onclick="input('2')">2</button>
+                    <button onclick="input('3')">3</button>
+                      <button onclick="input('+')">+</button>
+                  </div>
+                  <div class="row">
+                      <button onclick="input('.')">.</button>
+                      <button onclick="input('0')">0</button>
+                      <button onclick="input('00')">00</button>
+                      <button onclick="equal()">=</button>
+                  </div>
+          </div>
+     </div>
+                   <script>
+                    const input1 = document.getElementById('input')
+                    function input(value){
+                        input1.value+=value
+                    }
+                     function Clear(){
+                        input1.value=" "
+                     } 
+                     function delet(){
+                        input1.value =input1.value.toString().slice(0,-1)
+                     }
+                     function equal(){
+                        input1.value = eval(input1.value)
+                     }
+                   </script>
+          </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .wrapper{
+            width:300px;
+            height:200px;
+            display: flex;
+        }
+        .box{
+        }
+        #h1-head{
+            border: 1px solid;
+            margin: 5px;
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="box"></div>
+     </div>
+    <script>
+        let num = 20;
+        let box = document.querySelector(".box")
+        for(let i=1;i<=10;i++){
+            let h1Element1 = document.createElement("h1")
+            h1Element1.innerHTML = `Start Table ${i}`
+            h1Element1.style.background="orange"
+            h1Element1.style.color="white"
+            box.append(h1Element1)
+            for(let j=1;j<=10;j++){
+                let h1Element =  document.createElement("h1")
+                h1Element.id = "h1-head"
+                h1Element.innerHTML =` ${j}* ${i} = ${i*j}`
+                box.appendChild(h1Element)
+            }
+            let h1Element2 = document.createElement("h1")
+            h1Element2.innerHTML=`End Table ${i}` 
+            h1Element2.style.background="blue"
+            h1Element2.style.color="white"
+            box.append(h1Element2)
+        }
+    </script>
+</body>
+</html>

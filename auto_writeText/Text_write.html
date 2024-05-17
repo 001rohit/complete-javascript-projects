@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            background: #000;
+        }
+        .text-contain{
+            font-size:5rem;
+            color:white;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="text-contain"></div>
+    </div>
+    <script>
+        const text1 = "Hellow my name is rohit"
+        let index=0
+        const text_contain = document.querySelector(".text-contain")
+        function writeText(){
+           text_contain.innerText = text1.slice(0,index);
+           index++;
+
+           if(index>text1.length){
+            index=0;
+           }
+        }
+        setInterval(writeText, 100);
+    </script>
+</body>
+</html>

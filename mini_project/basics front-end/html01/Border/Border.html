@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feb 2 CSS</title>
+    <style>
+         *{
+            color: blue;
+         }
+
+         p{
+            color: red;
+         }
+
+         .check{
+            color: magenta;
+         }
+         .check1{
+             color: lime !important;
+            }
+        #demo{
+            color: cyan;
+        }
+
+        /* #one,#five,#p7{
+            color: blue;
+        } */
+
+        .common{
+            color: blue;
+            background-color: yellow;
+        }
+        .box1{
+            border: 3px dashed red;
+        }
+        .box2{
+            border: 3px solid lime;
+            border-radius: 15px;
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="one" class="common box1">This is Paragraph</p>
+    <p>This is Paragraph</p>
+    <p>This is Paragraph</p>
+    <p>This is Paragraph</p>
+    <p id="five" class="common box2">This is Paragraph</p>
+    <p id="p7" class="common box3">This is Paragraph</p>
+    <p>This is Paragraph</p>
+    <p>This is Paragraph</p>
+    <p>This is Paragraph</p>
+
+    <p id="demo" class="check check1" style="color: black;">This is Checking element for specificity</p>
+</body>
+</html>

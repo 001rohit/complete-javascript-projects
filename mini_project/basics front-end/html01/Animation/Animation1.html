@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation In CSS</title>
+
+    <style>
+      .box {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+
+        /* Animation Name */
+        animation-name: box;
+        /* animation-delay: 3s; */
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        position: relative;
+        /* animation-fill-mode: backwards; */
+        /* animation-direction:alternate; */
+        animation-iteration-count: infinite;
+        border-radius: 50%
+      }
+
+      @keyframes box {
+        0% {
+          background-color: red;
+          left: 0;
+          top: 0;
+
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: rgb(5, 222, 103);
+          left: 200px;
+          top: 200px;
+
+        }
+        75% {
+          background-color: rgb(12, 61, 221);
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: rgb(242, 3, 206);
+          left: 0;
+          top: 0;
+
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

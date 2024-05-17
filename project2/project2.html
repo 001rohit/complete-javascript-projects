@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .wrapper,.head{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+   .box{
+    display: inline;
+    background: #000;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    font-size:25px;
+    margin:0 10px;
+   }
+   .box:active{
+    transform: scale(0.9);
+   }
+   .head{
+    flex-direction: column;
+   }
+   #show{
+    margin: 0 10px;
+    padding: 10px;;
+    font-size:5rem;
+   }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1 id="show1">0</h1>
+        <h1 id="show2">0</h1>
+    </div>
+    <div class="wrapper">
+        <button class="box" id="btn1">Start</button>
+      </div>
+      <script>
+         let btn1 = document.querySelector("#btn1")
+         let show1 = document.querySelector("#show1")
+         let show2 = document.querySelector("#show2")
+
+         let count =0;
+         let round =0
+         function func1(){
+             setInterval(() => {
+                if(count>=60){
+                    count=1
+                 show1.innerHTML = `second: ${count}`;
+                 round++
+                show2.innerHTML = `minute: ${round}`
+
+                }
+                else{
+                    count++;
+                    show1.innerHTML = `second: ${count}`;
+                   show2.innerHTML = `minute: ${round}`
+
+                }
+            }, 1000);
+                     }
+         btn1.addEventListener("click",func1)
+
+
+
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:95vh;
+            background: #000;
+            flex-direction: column;
+
+        }
+        .tod-box{
+            /* width:450px; */
+             /* display: flex; */
+             flex-direction: column;
+             flex-wrap: wrap;
+            padding:0 15px;
+
+        }
+        .input1{
+            text-align: center;
+        }
+        input{
+            width:300px;
+            height:35px;
+            border-radius: 10px;
+            border: none;
+            background: hsl(10, 100%, 85%);
+        }
+        .tod-contain{
+            /* text-align: center; */
+            /* background: white; */
+            overflow: hidden;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #task{
+            color:blue;
+            font-size:2rem;
+            text-transform: capitalize;
+            
+        }
+        button{
+            padding:10px;
+            border-radius:10px;
+            /* margin:10px; */
+        }
+        .taskList{
+            /* border:1px solid black; */
+            width:100%;
+            margin:10px;
+        }
+        .todo-size{
+            width:450px;
+            padding: 5px;
+            background: white;
+        }
+        span{
+            color:brown;
+            border-bottom:2px solid blue;
+            padding-bottom: -15px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+         <div class="tod-box">
+            <div class="todo-size">
+                <h1> <span id="num"></span> Todo App </h1>
+            <div class="input1">
+                <input type="text" id="input-value" >
+                <button onclick="input1()">Add Task</button>
+            </div>
+            <div class="tod-contain">
+
+                <h2 id="task">ddsfffsfsdfffsfddsfffsfsdfffsfddsfffsfsdfffsf</h2>
+            </div>
+        </div>
+         </div>
+         <script>
+            var list = []
+            let showResult = document.getElementById("task")
+           let num  = document.getElementById("num")
+            function input1(){
+                list[notItem]=document.getElementById("input-value").value;
+
+                 var notItem = list.length
+                    if(list[notItem]==list[0]){
+                           alert("please Enter you valid task")
+                    }
+                    else{
+                        DisplayTask();
+                    }
+               }
+               function DisplayTask(){
+                var n = list.length
+                var taskAdd = document.getElementById("task")
+                while(taskAdd.hasChildNodes()){
+                    taskAdd.removeChild(taskAdd.lastChild)
+                }
+                for(let i = 0 ;i<n;i++){
+                    var itemDiv = document.createElement("div")
+                    itemDiv.className = "taskList"
+                    itemDiv.innerHTML = `<span>Task ${(i+1).toString()} </span> : ${list[i]}`
+                    taskAdd.appendChild(itemDiv)
+                    num.innerHTML = ` your ${i+1} task in`
+                }
+               }
+         </script>
+</body>
+</html>

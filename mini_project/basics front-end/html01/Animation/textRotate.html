@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Ghumana</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        color: red;
+        font-size: 20px;
+        background-color: black;
+        animation-name: ghumao;
+        /* animation-delay: 5s; */
+        animation-duration: 1s;
+        padding: 50px;
+        animation-iteration-count: infinite;
+      }
+      @keyframes ghumao {
+        from {
+          transform: rotate(0deg);
+          color: yellow;
+        }
+        to {
+          transform: rotate(360deg);
+          color: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mujhe Ghuma ke Dikhao</h1>
+  </body>
+</html>

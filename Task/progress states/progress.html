@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wraper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:95vh;
+            flex-direction: column;
+        }
+        .circle{
+            width:430px;
+            /* text-align: center; */
+            display: flex;
+            justify-content: space-between;
+        }
+        span{
+            width:40px;
+            height:40px;
+            border:2px solid rgb(186, 180, 180);
+            /* border-width: 5px; */
+            display: flex;
+             border-radius:20px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: white;
+            /* z-index: 0; */
+
+        }
+        
+       .line{
+          position:relative;
+          overflow: hidden;
+
+        }
+        .line::before{
+            content: " ";
+            border:2px solid  rgb(182, 181, 181);
+         position: absolute;
+        width:100%;
+        height:5px;
+        top:40%;
+        z-index: -1;
+       }
+       
+       button{
+        padding: 15px;
+        font-size:20px;
+        margin:25px 10px;
+        border-radius: 15px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+       }
+       .active{
+        border:5px solid blue;
+        color:blue
+       }
+    </style>
+</head>
+<body>
+        <div class="wraper">
+             <div class="line" id="progress">
+            <div class="circle">
+                <span class="active">1</span>
+                <span >2</span>
+                <span>3</span>
+                <span>4</span>
+            </div>
+        </div>
+        <div class="btn">
+           <button id="prev">Prev</button>
+           <button id="next">Next</button>
+       </div>
+    </div>
+    <script>
+          const pro = document.querySelectorAll("span")
+          const prev = document.getElementById("prev");
+          const next = document.getElementById("next");
+        const progress = document.getElementById("progress");
+        let currentActive =1;
+        next.addEventListener("click",()=>{
+            currentActive++;
+            if(currentActive>pro.length) currentActive = pro.length;
+            
+        })
+        prev.addEventListener("click",()=>{
+            currentActive--;
+            if(currentActive<1)currentActive=1;
+        });
+        const update = ()=>{
+            pro.forEach((pro,index)=>{
+                if(index<currentActive)pro.classList.add("active");
+                else pro.classList.remove("active");
+            });
+            const active = document.querySelector(".active");
+            progress.style.width = ((active.length -1)/(pro.length-1))*100+"%";
+            if(currentActive===1)prev.disabled = true;
+            else if(currentActive===pro.length) next.disabled = true;
+            else{
+                prev.disabled = false;
+                next.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

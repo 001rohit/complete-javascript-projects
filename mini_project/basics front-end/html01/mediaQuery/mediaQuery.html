@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query</title>
+    <style>
+      body {
+        background-color: rgb(0, 0, 0);
+      }
+      h1 {
+        color: white;
+        text-align: center;
+      }
+      /* Basic of Media Query */
+      /* @media (width<=500px) {
+        /* body {
+          background-color: red;
+        }
+        h1 {
+          font-size: 20px;
+        }
+      } */
+      /* 
+      @media (min-width: 500px) {
+        body {
+          background-color: red;
+        }
+        h1 {
+          font-size: 20px;
+        }
+      }
+
+      @media (min-width: 900px) {
+        body {
+          background-color: gold;
+        }
+        h1 {
+          font-size: 15px;
+          color: black;
+        }
+      } 
+
+      @media (orientation: landscape) {
+        body {
+          background-color: orange;
+        }
+      }*/
+
+      /* Normal Styling */
+
+      .box {
+        border: 13px double brown;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+      }
+      .common {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 5px;
+      }
+      .dibba1 {
+        background-color: yellow;
+      }
+      .dibba2 {
+        background-color: magenta;
+      }
+      .dibba3 {
+        background-color: lime;
+      }
+      .dibba4 {
+        background-color: blue;
+      }
+
+      @media (max-width: 500px) {
+        .box {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="common dibba1"></div>
+      <div class="common dibba2"></div>
+      <div class="common dibba3"></div>
+      <div class="common dibba4"></div>
+    </div>
+  </body>
+</html>

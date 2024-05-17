@@ -1,0 +1,26 @@
+<!-- // # Write a function that takes a number as input and returns true if the number is even, otherwise false. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+         <input type="text" id="value">
+         <button onclick="Status()">check</button>
+         <div id="result"></div>
+         <script>
+             var result = document.getElementById("result")
+             function Status(){
+                 var value = parseInt(document.getElementById("value").value)
+                if(value%2==0){
+                    result.innerHTML = `${value} is Even number`
+                }  
+                else{
+                    result.innerHTML = `${value} is Odd number`
+                }
+            }
+         </script>
+</body>
+</html>

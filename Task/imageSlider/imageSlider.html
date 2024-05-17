@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+           body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:95vh;
+           }
+           .wrapper{
+               text-align: center;
+               background: #000;
+               border: 1px solid black;
+               overflow: hidden;
+           }
+           .slider{
+            width:350px;
+            display: flex;
+            align-items: center;
+            justify-content:start;
+            margin:25px 0;
+           }
+           #slider{
+            transition: all 0.8s;
+           }
+           img{
+            width:350px;
+           }
+
+        button{
+            padding: 10px;
+            font-size:20px;
+            margin:10px;
+
+        }
+      </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="slider" id="slider">
+            <img src="https://img.freepik.com/free-vector/cute-koala-cartoon-character_1308-132636.jpg?size=626&ext=jpg&ga=GA1.1.1395880969.1710201600&semt=sph" alt="" class="image">
+            <img src="https://img.freepik.com/free-vector/cute-koala-with-cub-cartoon-icon-illustration_138676-2839.jpg?size=338&ext=jpg&ga=GA1.1.1395880969.1710201600&semt=sph" alt="" class="image" >
+            <img src="https://previews.123rf.com/images/alfadanz/alfadanz2006/alfadanz200600295/150081592-cute-koala-family-mother-with-children-sit-on-the-tree-cartoon-animal-design-flat-vector.jpg" alt="" class="image" >
+        </div>
+        <button onclick="Prev()">Prev</button>
+        <button onclick="Next()">Next</button>
+    </div>
+    <script>
+        let slider = document.getElementById("slider")
+        let image = document.querySelectorAll(".image")
+         let slidebox =1;
+         function Prev(){
+            slider.style.transform = `translateX(-${(slidebox-2)*345}px)`
+                slidebox--
+         }
+        function Next(){
+            if(slidebox<image.length){
+                slider.style.transform = `translateX(-${slidebox*345}px)`
+                slidebox++
+            }else{
+                slider.style.transform = `translateX(-${(image.length-1)*345}px)`
+                slidebox=image.length;
+                
+            }
+         
+        }
+    </script>
+</body>
+</html>

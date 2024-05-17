@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <div class="wrapper">
+        <h1>Counter</h1>
+        <h1 id="val">0</h1>
+        <div class="btn">
+            <button onclick="btn1()">increament</button>
+            <button onclick="btn2()">Reset</button>
+            <button onclick="btn3()">Decrement</button>
+        </div>
+       </div>
+          <script>
+            var val = document.getElementById("val")
+            let count1 = 0
+                 function btn1(){
+                      count1++
+                          count=0
+                          val.innerHTML = count1
+                 }
+                 function btn2(){
+                      val.innerHTML = 0
+                 }
+                 function btn3(){
+                         count1--
+                            val.innerHTML = count1
+
+                 }
+
+                  
+          </script>
+</body>
+</html>

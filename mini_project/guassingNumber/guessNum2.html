@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess number</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+
+        }
+        .wrapper{
+            width:350px;
+            /* height:400px; */
+            border-radius: 20px;
+            text-align: center;
+           border: 1px solid gray;
+           padding: 20px 0;
+        }
+        .sec1{
+            padding: 10px;
+        }
+        .sec1 button{
+           padding: 10px;
+           font-weight:bold;
+           font-size:25px;
+        }
+        
+        .sec3 button{
+            padding: 8px;
+            font-size:20px;
+        }
+    .sec2 img,img{
+        width:280px;
+    }
+     #input1{
+        width:230px;
+        height:30px;
+        background: gray;
+        border: none;
+        font-size: 15px;
+        color: white;
+        text-align: left;
+     }
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+            
+            <!-- section1 -->
+
+            <div class="sec1" id="part1">
+                <button id="btn1">
+                    Start The Game
+                </button>
+            </div>
+
+       <!-- section2 -->
+
+            <div class="sec2" id="part2">
+                <img src="2.gif" alt="">
+                <h2>game Loading...... </h2>
+            </div>
+
+       <!-- section3 -->
+
+            <div class="sec3" id="part3">
+                <h1>Guessing Number</h1>
+                <img src="1.gif" alt="">
+                <input type="text" id="input1">
+                <button id="btn2">Click</button>
+             </div>
+        
+             <!-- section4 -->
+             <h3 id="result"></h3>
+        </div>
+
+    <script>
+        const sec1 = document.getElementById("part1")
+        const sec2 = document.getElementById("part2")
+        const sec3 = document.getElementById("part3")
+    
+        const btn1 = document.getElementById("btn1");
+
+        const btn2 = document.getElementById("btn2");
+         
+    
+        sec2.style.display = "none";
+        sec3.style.display = "none";
+        let num=0;
+        var attemp = 0
+        var pass = 0
+        function generat_random_number(){
+       let answer = Math.floor(Math.random()*10)+1;
+       num = answer
+       console.log(num)
+    }
+    function myBtn1(){
+        // console.log("hellow btn1")
+        sec1.style.display = "none"
+        sec2.style.display = "block"
+        
+        setTimeout(()=>{
+            generat_random_number()
+            sec2.style.display = "none";
+        sec3.style.display = "block";
+            
+        },1000)        
+    }
+    function myBtn2(e){
+        // e.preventDefault();
+        console.log("hellow btn2");
+        let check = document.getElementById("input1").value;
+         check = Number(check)
+         let min = 0
+         let max = 10
+        console.log(check,typeof(check))
+         attemp++;
+
+    //   if(num == check){
+    //     alert("Congrates, You are genius")
+    //   }
+
+    //   else{
+    //     alert("OOP's, this is wrong number")
+    //   }
+    const res = document.getElementById("result")
+     
+       if(isNaN(check)){
+        alert("Please Enter valid number")
+       }
+       else if(check<min || check>max){
+        alert("Please Enter Number between(1 to 10)")
+       }
+       else{
+           if(check<num){
+            alert("Too Low! Try Again")
+            result.innerHTML= `Test fail ${attemp}`
+          
+        }
+           else if(check>num){
+            alert("Too High! Try Again")
+            result.innerHTML= `Test fail ${attemp}`
+
+           }
+          else{
+            pass++
+              alert(`Correct The answer was ${num}.You are take attem ${attemp}`)
+              result.innerHTML= `Test pass ${pass}`
+            }
+       }
+    //    setInterval(()=>{
+    //        const res = generat_random_number()
+    //        console.log(res)
+    //     },5000)
+
+        generat_random_number()
+        console.log(res.innerText)
+        console.log(attempt)
+    }
+      
+                btn1.addEventListener("click",myBtn1)
+                btn2.addEventListener("click",myBtn2)
+       
+          </script>
+</body>
+</html>

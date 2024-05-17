@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit</title>
+</head>
+<body>
+    <input type="text" id="setLimit" placeholder="Enter your age">
+    <button onclick="onChange()">submit</button>
+    <div id="result"></div>
+           <script>
+               function onChange(){
+                   let setLimit = document.getElementById("setLimit").value
+                   console.log(setLimit)
+                      let finalAns = setLimit > 18 ? "you can watch tv":"you can go to bed and sleep down"
+                      document.getElementById("result").innerHTML = finalAns
+                      }
+           </script>
+</body>
+</html>

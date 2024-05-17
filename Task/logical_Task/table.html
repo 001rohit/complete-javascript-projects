@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            /* border: 1px solid black; */
+            /* background: #000; */
+        }
+        h1{
+            background: white;
+        }
+        #demo{
+            /* border: 1px solid black; */
+            /* display: flex; */
+            text-transform: uppercase;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: red;
+        }
+        .num{
+            border: 1px solid black;
+            background: white;
+            padding: 5px;
+            margin:5px;
+            font-size:25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table 1 to 10</h1>
+    <div id="demo"></div>
+    <script>
+        const num =[]
+        let demo = document.getElementById("demo")
+        
+        for(let i=1;i<=10;i++){
+            var tableNum = document.createElement("h1")
+            tableNum.innerHTML = `table ${i}`
+            demo.appendChild(tableNum)
+            for(let j=1;j<=10;j++){
+                var div = document.createElement("div")
+                div.className = 'num'
+                div.innerHTML = `${i} * ${j} =  ${i*j}</br>`
+                demo.appendChild(div)
+            }
+        }
+    </script>
+</body>
+</html>

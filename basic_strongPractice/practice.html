@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+<body>
+          <div class="box">
+            <div class="bx1">
+                <input type="text" id="valu1" placeholder="Enter you inform.">
+                <button id="btn1">student name</button>
+                <button id="btn2">student address</button>
+                <button id="btn3">student hobby</button>
+                <button id="btn4">student age</button>
+                <div id="show"></div>
+            </div>
+          </div>
+          <script>
+            //   let valu1 = document.getElementById("valu1")
+              let btn1 = document.getElementById("btn1")
+              let btn2 = document.getElementById("btn2")
+              let btn3 = document.getElementById("btn3")
+              let btn4 = document.getElementById("btn4")
+              let show  = document.getElementById("show")
+               let count=0;
+               btn1.addEventListener('click',student1)
+               btn2.addEventListener('click',student2)
+               btn3.addEventListener('click',student3)
+               btn4.addEventListener('click',student4)
+              
+          function student1(){
+            count++
+              let valu1 = document.getElementById("valu1").value
+             show.innerHTML = `${count} ${valu1}`
+             alertBox(valu1)
+            }
+ 
+            function student2(){
+                count++
+              let valu2 = document.getElementById("valu1").value
+             show.innerHTML = `${count} ${valu2}`
+             alertBox(valu2)
+
+            }
+            function student3(){
+                count++
+              let valu3 = document.getElementById("valu1").value
+             show.innerHTML = `${count} ${valu3}`
+             alertBox(valu3)
+
+            }
+            function student4(){
+                count++
+              let valu4 = document.getElementById("valu1").value
+             show.innerHTML = `${count} ${valu4}`
+             alertBox(valu4)
+
+            }
+            function alertBox(value){
+                count++
+                if(count%2==0){
+
+                    alert(` number ${count}:  ${value}`)
+                }
+                else{
+                    alert(` number ${count}:  ${value}`)
+                    
+                }
+            }
+          
+          </script>
+</body>
+</html>

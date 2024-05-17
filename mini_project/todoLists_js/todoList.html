@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+       <div class="wrapper">
+        <h1>todo list</h1>
+        <div class="box">
+            <table>
+                <tr>
+                    <td>
+                        Comment:
+                    </td>
+                    <td>
+                        <input type="text" id="textValue">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                         <input type="button" value="submit" onclick="AddTask()">
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <div id="itemCount"></div><br>
+            <div id="itemList"></div>
+        </div>
+       </div>
+       <script>
+        var list = []
+        function AddTask(){
+            var noItem = list.length
+            list[noItem] = document.getElementById("textValue").value
+         displayTask()
+        }
+        function displayTask(){
+            var n = list.length;
+            document.getElementById("itemCount").innerHTML = `No. of item added: ${n.toString()}`;
+            var itemList = document.getElementById("itemList");
+            while(itemList.hasChildNodes()){
+                itemList.removeChild(itemList.lastChild)
+            }
+            for(let i = 0; i<n;i++){
+                var itemDiv  = document.createElement("div");
+                itemDiv.innerHTML =`items ${(i+1).toString()} of ${n.toString()} is : ${list[i]}`
+                itemList.appendChild(itemDiv)
+            }
+        }
+       </script>
+</body>
+</html>

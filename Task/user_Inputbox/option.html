@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="btn1" type="radio"  name="fav"/>
+      <label for="btn1">Subscribe</label> 
+      <br>
+      <br>
+      <input id="Visa" type="radio" name="fav" />
+    <label for="Visa">Visa</label> 
+    <br>
+    <input id="Gpay" type="radio" name="fav"/>
+    <label for="Gpay">Gpay</label> 
+    <br>
+    <button onclick="submit1()">submit</button>
+    <div id="subs"></div>
+    <div id="payment"></div>
+    <script>
+        let subscribe1 = document.getElementById("btn1")
+        let Visa = document.getElementById("Visa")
+        let Gpay = document.getElementById("Gpay")
+        let subscribe = document.getElementById("subs")
+        let payment= document.getElementById("payment")
+
+        function submit1(){
+          if(subscribe1.checked){
+            subscribe.textContent = `you  are select subscribe option`
+          }
+          else{
+            subscribe.textContent =  `you are not choose option subscribe`
+          }
+          if(Visa.checked){
+            payment.textContent = `You are seletect payment option Visa`
+          }
+          else if(Gpay.checked){
+            payment.textContent = `You are select payment option Gpay`
+          }
+          else{
+                payment.textContent = 'you have no any one option select .So please select payment option any one'
+          }
+        }
+    </script>
+</body>
+</html>

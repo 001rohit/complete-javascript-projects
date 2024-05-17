@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="user">
+    <button onclick="check()">click</button>
+    <div id="showResult"></div>
+    <script>
+        let system = document.getElementById("system")
+        let show = document.getElementById("showResult")
+        var useValu;
+        var attempt = 0;
+        var life = 0;
+        function user1() {
+            let user = document.getElementById("user").value
+            useValu = Number(user)
+            // console.log(typeof (user),user) 
+
+        }
+        function check() {
+            let random = Math.floor(Math.random() * 10) + 1
+            console.log(random)
+            user1()
+            console.log(typeof (useValu), useValu)
+            attempt++
+            if (attempt > 0 && attempt < 6) {
+                if (useValu > 10) {
+                    alert("Please enter valide number in range (1 to 10) ")
+                }
+                else if (useValu < 10 && useValu > 0) {
+                    if (random > useValu) {
+                        alert(`Oops you enter low value. Please enter high value `)
+                    }
+                    else if (random < useValu) {
+                        alert("Oops you enter high value . Please enter low value.")
+                    }
+                    else if (random === useValu) {
+                        alert(`Your number is matched. For attempt ${attempt}`)
+                    }
+                }
+                else {
+                    alert("Please enter valid data")
+                }
+
+                console.log(attempt)
+
+            }
+            else {
+                attempt = 0
+                alert("game is over")
+            }
+
+        }
+        console.log(show)
+    </script>
+</body>
+
+</html>
