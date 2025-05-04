@@ -120,24 +120,32 @@ const userData =[
       "address": "Address10"
     }
   ]
-  document.body.style.textAlign= "center"
-let root = document.querySelector("#root")
-for(let val of userData){
-    let div = document.createElement("li")
-    div.innerHTML = `${val.id} : ${val.firstName} ${val.lastName}`
-    div.style.padding = "10px"
-    div.style.background = "lime"
-    div.style.border = "1px solid white"
-    div.innerHTML = ` ${val.id} : ${val.firstName} ${val.lastName} `
-    root.appendChild(div)
-}
-for(let val of userData){
-    let div1 = document.createElement("li")
+
+//   document.body.style.textAlign= "center"
+// let root = document.querySelector("#root")
+// for(let val of userData){
+//     let div = document.createElement("li")
+//     div.innerHTML = `${val.id} : ${val.firstName} ${val.lastName}`
+//     div.style.padding = "10px"
+//     div.style.background = "lime"
+//     div.style.border = "1px solid white"
+//     div.innerHTML = ` ${val.id} : ${val.firstName} ${val.lastName} `
+//     root.appendChild(div)
+// }
+// for(let val of userData){
+//     let div1 = document.createElement("li")
      
-    div1.innerHTML = `${val.id} : ${val.firstName} ${val.lastName}`
-     div1.style.padding = "10px"
-     div1.style.background = "gray"
-     div1.style.border = "1px solid white"
-    root.appendChild(div1)
-}
-  console.log(userData)
+//     div1.innerHTML = `${val.id} : ${val.firstName} ${val.lastName}`
+//      div1.style.padding = "10px"
+//      div1.style.background = "gray"
+//      div1.style.border = "1px solid white"
+//     root.appendChild(div1)
+// }
+//   console.log(userData)
+//  userData.map((elem)=>{
+//    console.log(Number(elem.contactNumber)+1)
+// })
+
+// for(let val of userData){
+//   console.log(val.id,val.firstName,val.lastName,val.email)
+// }

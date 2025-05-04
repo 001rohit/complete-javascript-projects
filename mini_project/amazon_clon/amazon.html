@@ -16,6 +16,8 @@
                 background: #131921;
                 padding: 8px 0;
                 margin-top: 5px;
+                z-index: 12;
+                overflow: hidden;
             }
             .header{
                 flex-wrap: wrap;
@@ -82,6 +84,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                min-height: 55vh;
                 /* position: relative; */
                 /* z-index:19; */
                 
@@ -113,7 +116,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-wrap: wrap;
-                position: relative;
+                /* position: relative; */
                 bottom: 145px;
             }
             .box{
@@ -130,6 +133,12 @@
                color: white;
                padding: 12px;
             } 
+            .header .log{
+                margin-left:20px;
+            }
+            .log h3{
+                color: white;
+            }
             </style>
     </head>
     <body>
@@ -137,6 +146,7 @@
             <div class="header">
                 <div class="log">
                     <img src="logo1.png" alt="">
+                    <h3>amazon.in</h3>
                 </div>
                 <div class="input">
                     <input type="text">
@@ -165,7 +175,7 @@
         <div class="contain-imgbox">
             <div class="img-box">
                 <img src="contain1.jpg" alt="">
-                <div class="note-contain"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima officia veritatis iure vero, nam doloremque sed illum modi suscipit quo!</p>
+                <div class="note-contain">
                     <div class="flex-box1">
                         <div class="box">
                           <div class="img-contain">
